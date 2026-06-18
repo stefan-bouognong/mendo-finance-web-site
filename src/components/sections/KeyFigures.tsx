@@ -73,12 +73,12 @@ function CounterCard({ icon: Icon, label, value, suffix, isCurrency }: any) {
   return (
     <div ref={ref} className="flex flex-col items-center text-center space-y-4 p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 hover:-translate-y-2 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 group">
       <div className="p-4 bg-secondary/20 rounded-2xl group-hover:bg-secondary group-hover:scale-110 transition-all duration-300">
-        <Icon className="w-8 h-8 text-secondary group-hover:text-white transition-colors duration-300" />
+        <Icon className="w-8 h-8  group-hover:text-white transition-colors duration-300" />
       </div>
       <div className="space-y-1">
         <div className="text-4xl md:text-5xl font-headline font-bold">
           {isCurrency ? count.toLocaleString() : count}
-          <span className="text-secondary">{suffix}</span>
+          <span>{suffix}</span>
         </div>
         <p className="text-primary-foreground/80 font-medium">{label}</p>
       </div>
