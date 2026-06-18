@@ -1,6 +1,3 @@
-# Firebase Studio
+# Mendo Finance Web Site
 
-This is a NextJS starter in Firebase Studio.
-
-To get started, take a look at src/app/page.tsx.
-# mendo-finance-web-site
+This is the main website for Mendo Finance.

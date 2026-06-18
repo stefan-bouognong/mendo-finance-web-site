@@ -16,12 +16,11 @@ export function KeyFigures() {
     <section className="py-20 bg-primary text-white overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 font-headline text-secondary">Nos chiffres clés</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 font-headline">Nos chiffres clés</h2>
           <p className="text-primary-foreground/70 max-w-2xl mx-auto">
             Une croissance solide portée par une vision d'inclusion et de modernité.
           </p>
         </div>
-
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {figures.map((fig, i) => (
             <CounterCard key={i} {...fig} />
@@ -72,9 +71,9 @@ function CounterCard({ icon: Icon, label, value, suffix, isCurrency }: any) {
   }, [isVisible, value]);
 
   return (
-    <div ref={ref} className="flex flex-col items-center text-center space-y-4 p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-      <div className="p-3 bg-secondary rounded-xl">
-        <Icon className="w-8 h-8 text-white" />
+    <div ref={ref} className="flex flex-col items-center text-center space-y-4 p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 hover:-translate-y-2 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 group">
+      <div className="p-4 bg-secondary/20 rounded-2xl group-hover:bg-secondary group-hover:scale-110 transition-all duration-300">
+        <Icon className="w-8 h-8 text-secondary group-hover:text-white transition-colors duration-300" />
       </div>
       <div className="space-y-1">
         <div className="text-4xl md:text-5xl font-headline font-bold">

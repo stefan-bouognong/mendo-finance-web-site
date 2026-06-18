@@ -7,7 +7,43 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Sparkles, Calculator, PiggyBank, BrainCircuit, Loader2 } from "lucide-react";
-import { financialGoalPlanner, type FinancialGoalPlannerOutput } from "@/ai/flows/financial-goal-planner-flow";
+// Removed AI import due to Firebase Studio clean up
+
+type FinancialGoalPlannerOutput = {
+  monthlyContributionNeeded: number;
+  tontineAdvice: string;
+  savingsStrategy: string;
+};
+
+const financialGoalPlanner = async (data: any): Promise<FinancialGoalPlannerOutput> => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const remainingAmount = Math.max(0, data.savingsTarget - data.currentSavings);
+      const monthlyNeeded = remainingAmount / (data.timeframeMonths || 1);
+      const disposableIncome = data.monthlyIncome - data.monthlyExpenses;
+      
+      let advice = "";
+      let strategy = "";
+
+      if (monthlyNeeded <= disposableIncome * 0.3) {
+        advice = "Une tontine classique avec un petit groupe sera parfaite. L'effort d'épargne est très confortable.";
+        strategy = `Épargnez ${Math.round(monthlyNeeded)} FCFA par mois de manière régulière.\n\nVous pouvez utiliser Mendo COTI pour automatiser vos versements.`;
+      } else if (monthlyNeeded <= disposableIncome) {
+        advice = "Une tontine rotative structurée avec des membres de confiance est recommandée pour maintenir la discipline.";
+        strategy = `Attention, l'effort demandé est significatif (${Math.round((monthlyNeeded / disposableIncome) * 100)}% de votre reste à vivre).\n\nEssayez de réduire certaines dépenses ou de rejoindre un groupe solidaire avec Mendo COTI.`;
+      } else {
+        advice = "L'objectif est trop ambitieux pour votre capacité d'épargne actuelle. Rejoignez une tontine flexible.";
+        strategy = `Vos revenus disponibles (${Math.round(disposableIncome)} FCFA) ne couvrent pas l'effort mensuel requis (${Math.round(monthlyNeeded)} FCFA).\n\nNous vous conseillons de revoir votre objectif ou d'allonger la durée de votre projet.`;
+      }
+
+      resolve({
+        monthlyContributionNeeded: monthlyNeeded,
+        tontineAdvice: advice,
+        savingsStrategy: strategy
+      });
+    }, 1000); // Simulate network delay
+  });
+};
 
 export function GoalPlanner() {
   const [loading, setLoading] = useState(false);
@@ -31,7 +67,7 @@ export function GoalPlanner() {
       const output = await financialGoalPlanner(formData);
       setResult(output);
     } catch (error) {
-      console.error("AI Error:", error);
+      console.error("Calculation Error:", error);
     } finally {
       setLoading(false);
     }

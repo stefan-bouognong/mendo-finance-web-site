@@ -34,10 +34,10 @@ export function MendoCoti() {
                   data-ai-hint="smartphone app"
                 />
               </div>
-              <div className="absolute -right-8 bottom-20 bg-white p-6 rounded-2xl shadow-xl border border-border animate-bounce hidden md:block">
+              <div className="absolute -right-8 bottom-20 bg-white p-6 rounded-2xl shadow-xl border border-border animate-float hidden md:block hover:scale-105 transition-transform duration-300">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                    <CheckCircle2 className="w-6 h-6 text-green-600" />
+                  <div className="w-10 h-10 bg-secondary/20 rounded-full flex items-center justify-center">
+                    <CheckCircle2 className="w-6 h-6 text-secondary" />
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground">Transaction réussie</p>
@@ -59,7 +59,7 @@ export function MendoCoti() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {features.map((feat, i) => (
-                <div key={i} className="space-y-3">
+                <div key={i} className="space-y-3 p-4 rounded-2xl hover:bg-secondary/5 hover:-translate-y-1 hover:shadow-sm border border-transparent hover:border-secondary/20 transition-all duration-300">
                   <div className="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center text-secondary">
                     <feat.icon className="w-6 h-6" />
                   </div>
