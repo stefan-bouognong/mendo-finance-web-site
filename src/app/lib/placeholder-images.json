@@ -1,0 +1,29 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "Financial community interaction",
+      "imageUrl": "https://picsum.photos/seed/mendo1/1920/1080",
+      "imageHint": "banking community"
+    },
+    {
+      "id": "app-mockup-1",
+      "description": "Mendo COTI Smartphone Mockup 1",
+      "imageUrl": "https://picsum.photos/seed/mendo2/600/1200",
+      "imageHint": "smartphone app"
+    },
+    {
+      "id": "app-mockup-2",
+      "description": "Mendo COTI Smartphone Mockup 2",
+      "imageUrl": "https://picsum.photos/seed/mendo3/600/1200",
+      "imageHint": "mobile banking"
+    },
+    {
+      "id": "about-vision",
+      "description": "Modern office building",
+      "imageUrl": "https://picsum.photos/seed/mendo4/800/600",
+      "imageHint": "modern architecture"
+    }
+  ]
+}
