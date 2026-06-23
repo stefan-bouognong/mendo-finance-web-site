@@ -1,11 +1,12 @@
-
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ShieldCheck } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import mendoLogo from "@/image/mendofinance.png";
 
 const navItems = [
   { name: "Accueil", href: "#home" },
@@ -37,12 +38,12 @@ export function Navigation() {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="#home" className="flex items-center gap-2 group">
-          <div className="bg-primary p-2 rounded-lg group-hover:bg-secondary transition-colors">
-            <ShieldCheck className="w-6 h-6 text-white" />
-          </div>
-          <span className="font-headline font-bold text-xl md:text-2xl tracking-tight text-primary">
-            Mendo <span className="text-secondary">Finances</span>
-          </span>
+          <Image
+            src={mendoLogo}
+            alt="Mendo Finances"
+            className="h-15 w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop menu */}
@@ -56,8 +57,8 @@ export function Navigation() {
               {item.name}
             </Link>
           ))}
-          <Button className="rounded-full bg-primary hover:bg-primary/90">
-            Ouvrir un compte
+          <Button asChild className="rounded-full bg-primary hover:bg-primary/90">
+            <Link href="#mendo-coti">Découvrir Mendo COTI</Link>
           </Button>
         </div>
 
@@ -83,8 +84,8 @@ export function Navigation() {
               {item.name}
             </Link>
           ))}
-          <Button className="w-full rounded-full" onClick={() => setIsOpen(false)}>
-            Ouvrir un compte
+          <Button asChild className="w-full rounded-full" onClick={() => setIsOpen(false)}>
+            <Link href="#mendo-coti">Découvrir Mendo COTI</Link>
           </Button>
         </div>
       )}

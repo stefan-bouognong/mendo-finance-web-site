@@ -20,6 +20,7 @@ import BanqueMondiale from "@/image/banqueMondiale.png";
 import EcobankLogo from "@/image/ecobankLogo.png";
 import Minilogo from "@/image/minilogo.png";
 import OmLogo from "@/image/omLogo.png";
+import maviance from "@/image/maviance.png";
 
 export default function Home() {
   return (
@@ -44,12 +45,11 @@ export default function Home() {
             <div className="relative flex overflow-hidden">
               <div className="flex space-x-12 animate-float whitespace-nowrap px-4 py-8 items-center justify-center min-w-full">
                 {[
-                  { name: 'Banque Mondiale', logo: BanqueMondiale },
-                  { name: 'Ministère des Finances', logo: Minilogo },
                   { name: 'Orange Money', logo: OmLogo },
                   { name: 'MTN Mobile Money', logo: MomoLogo },
-                  { name: 'Express Union', logo: ExpressUnion },
-                  { name: 'EcoBank', logo: EcobankLogo }
+
+                  { name: 'Maviance', logo: maviance }
+
                 ].map((partner, i) => (
                   <div
                     key={i}

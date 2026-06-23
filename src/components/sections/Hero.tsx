@@ -1,6 +1,6 @@
-
 "use client";
 
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Smartphone, Building2 } from "lucide-react";
 import Image from "next/image";
@@ -40,11 +40,22 @@ export function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Button size="lg" className="h-14 px-8 rounded-full text-lg gap-2 bg-primary shadow-xl hover:shadow-primary/40 hover:-translate-y-1 transition-all duration-300">
-              Ouvrir un compte <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <Button
+              asChild
+              size="lg"
+              className="h-14 px-8 rounded-full text-lg gap-2 bg-primary shadow-xl hover:shadow-primary/40 hover:-translate-y-1 transition-all duration-300 group"
+            >
+              <Link href="#mendo-coti">
+                Ouvrir un compte <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </Button>
-            <Button size="lg" variant="outline" className="h-14 px-8 rounded-full text-lg border-2 border-primary/20 hover:border-primary/40 bg-white/50 backdrop-blur-sm">
-              Nous contacter
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="h-14 px-8 rounded-full text-lg border-2 border-primary/20 hover:border-primary/40 bg-white/50 backdrop-blur-sm"
+            >
+              <Link href="#contact">Nous contacter</Link>
             </Button>
           </div>
         </div>

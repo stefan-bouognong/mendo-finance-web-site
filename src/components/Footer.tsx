@@ -1,8 +1,9 @@
-
 "use client";
 
 import Link from "next/link";
-import { ShieldCheck } from "lucide-react";
+import Image from "next/image";
+import mendoLogo from "@/image/mendofinance.png";
+import mendoCompanyLogo from "@/image/mendocompany.png";
 
 export function Footer() {
   return (
@@ -11,12 +12,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2 space-y-6">
             <Link href="#" className="flex items-center gap-2 group">
-              <div className="bg-white p-2 rounded-lg">
-                <ShieldCheck className="w-6 h-6 text-primary" />
-              </div>
-              <span className="font-headline font-bold text-2xl tracking-tight">
-                Mendo <span className="text-secondary">Finances</span>
-              </span>
+              <Image
+                src={mendoLogo}
+                alt="Mendo Finances"
+                className="h-12 w-auto object-contain bg-white rounded-lg p-1"
+              />
             </Link>
             <p className="text-primary-foreground/60 max-w-sm leading-relaxed">
               Mendo Finances est un Établissement de Microfinance de première catégorie agréé par le Ministère des Finances. Nous œuvrons pour une inclusion financière moderne et sécurisée.
@@ -45,9 +45,17 @@ export function Footer() {
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/40">
           <p>© {new Date().getFullYear()} Mendo Finances. Tous droits réservés.</p>
-          <div className="flex gap-6">
-            <span>Agrément n° XXX/EMF/MINFI</span>
-            <span>Design by Mendo Finances Tech</span>
+          <div className="flex items-center gap-6">
+            <span>Agrément Minadère</span>
+            <span className="flex items-center gap-2">
+              Design by
+              <Image
+                src={mendoCompanyLogo}
+                alt="Mendo Company"
+                className="h-5 w-auto object-contain"
+              />
+              Mendo Company
+            </span>
           </div>
         </div>
       </div>

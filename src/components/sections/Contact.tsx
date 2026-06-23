@@ -40,10 +40,10 @@ export function Contact() {
 
             <div className="space-y-8">
               {[
-                { icon: MapPin, title: "Siège social", val: "Avenue des Microfinances, Douala, Cameroun" },
+                { icon: MapPin, title: "Siège social", val: "Tamtam, Yaoundé-Cameroun" },
                 { icon: Phone, title: "Téléphone", val: "+237 6XX XXX XXX" },
                 { icon: MessageSquare, title: "WhatsApp", val: "+237 6XX XXX XXX" },
-                { icon: Mail, title: "Email", val: "contact@mendo-finances.com" },
+                { icon: Mail, title: "Email", val: "contact@mendofinances.com" },
               ].map((item, i) => (
                 <div key={i} className="flex gap-6 items-start">
                   <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
