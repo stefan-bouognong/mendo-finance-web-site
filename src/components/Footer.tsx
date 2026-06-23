@@ -47,15 +47,12 @@ export function Footer() {
           <p>© {new Date().getFullYear()} Mendo Finances. Tous droits réservés.</p>
           <div className="flex items-center gap-6">
             <span>Agrément Minadère</span>
-            <span className="flex items-center gap-2">
               Design by
               <Image
                 src={mendoCompanyLogo}
                 alt="Mendo Company"
-                className="h-5 w-auto object-contain"
+                className="h-5 w-auto object-contain rounded-lg"
               />
-              Mendo Company
-            </span>
           </div>
         </div>
       </div>
