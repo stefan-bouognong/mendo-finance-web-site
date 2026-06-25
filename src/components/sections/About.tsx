@@ -4,6 +4,9 @@
 import { Compass, Target, Heart, Handshake, Lightbulb, TrendingUp, Users } from "lucide-react";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import imagemf from "@/image/imagemf.png";
+import imagemf1 from "@/image/imagemf1.png";
+
 
 const values = [
   { icon: Heart, title: "Proximité", desc: "Nous restons proches des communautés avec des agents de terrain dédiés." },
@@ -48,14 +51,13 @@ export function About() {
 
           <div className="relative rounded-2xl overflow-hidden aspect-video lg:aspect-square shadow-2xl">
             <Image
-              src={visionImg?.imageUrl || ""}
+              src={imagemf}
               alt="Mendo Vision"
               fill
               className="object-cover"
-              data-ai-hint="modern architecture"
             />
             <div className="absolute inset-0 bg-primary/20" />
-            <div className="absolute bottom-8 left-8 right-8 p-6 glass-morphism rounded-xl">
+            {/* <div className="absolute bottom-8 left-8 right-8 p-6 glass-morphism rounded-xl">
               <div className="flex items-center gap-4">
                 <div className="p-3 bg-primary rounded-full">
                   <Handshake className="w-6 h-6 text-white" />
@@ -65,7 +67,7 @@ export function About() {
                   <p className="font-bold text-primary">Accompagner chaque entrepreneur</p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 

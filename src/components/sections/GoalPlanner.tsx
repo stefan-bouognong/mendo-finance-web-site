@@ -135,7 +135,7 @@ export function GoalPlanner() {
 
             <div className="space-y-6">
               {result ? (
-                <div className="space-y-6 animate-in fade-in slide-in-from-right duration-500">
+                <div className="space-y-6 animate-in fade-in slide-in-from-right duration-1000">
                   <div className="p-8 rounded-2xl bg-primary text-white space-y-4 shadow-xl">
                     <div className="flex items-center gap-3">
                       <div className="p-2 bg-white/20 rounded-lg">

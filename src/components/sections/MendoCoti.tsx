@@ -5,6 +5,8 @@ import { CheckCircle2, Smartphone, ShieldCheck, Zap, Globe, PieChart } from "luc
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import androidcoti from "@/image/androidcoti.png";
+import iphonecoti from "@/image/iphonecoti.png";
 
 const features = [
   { icon: Zap, title: "Épargne digitale", desc: "Versez et retirez instantanément depuis votre smartphone." },
@@ -25,16 +27,28 @@ export function MendoCoti() {
             <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
             
             <div className="relative mx-auto max-w-[320px] lg:max-w-none lg:w-[500px]">
-              <div className="aspect-[9/16] relative rounded-[3rem] border-8 border-primary overflow-hidden shadow-2xl">
-                <Image
-                  src={mockup?.imageUrl || ""}
-                  alt="Mendo COTI Smartphone Mockup"
-                  fill
-                  className="object-cover"
-                  data-ai-hint="smartphone app"
-                />
+              <div className="relative h-[650px] w-full">
+                {/* Android derrière */}
+                <div className="absolute right-0 top-0 w-[280px] z-10">
+                  <Image
+                    src={androidcoti}
+                    alt="Application Mendo COTI Android"
+                    className="w-full h-auto"
+                    priority
+                  />
+                </div>
+
+                {/* iPhone devant et décalé à gauche */}
+                <div className="absolute left-0 top-12 w-[280px] z-20">
+                  <Image
+                    src={iphonecoti}
+                    alt="Application Mendo COTI iPhone"
+                    className="w-full h-auto"
+                    priority
+                  />
+                </div>
               </div>
-              <div className="absolute -right-8 bottom-20 bg-white p-6 rounded-2xl shadow-xl border border-border animate-float hidden md:block hover:scale-105 transition-transform duration-300">
+              <div className="absolute bottom-6 right-10 z-30 bg-white p-6 rounded-2xl shadow-xl border border-border animate-float hidden md:block hover:scale-105 transition-transform duration-300">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-secondary/20 rounded-full flex items-center justify-center">
                     <CheckCircle2 className="w-6 h-6 text-secondary" />

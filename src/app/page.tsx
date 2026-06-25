@@ -14,14 +14,11 @@ import { Footer } from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
 import Image from "next/image";
 
-import ExpressUnion from "@/image/ExpressUnion.png";
+
 import MomoLogo from "@/image/MomoLogo.png";
-import BanqueMondiale from "@/image/banqueMondiale.png";
-import EcobankLogo from "@/image/ecobankLogo.png";
-import Minilogo from "@/image/minilogo.png";
 import OmLogo from "@/image/omLogo.png";
 import maviance from "@/image/maviance.png";
-
+import turbobank from "@/image/turbobank.png";
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -47,8 +44,8 @@ export default function Home() {
                 {[
                   { name: 'Orange Money', logo: OmLogo },
                   { name: 'MTN Mobile Money', logo: MomoLogo },
-
-                  { name: 'Maviance', logo: maviance }
+                  { name: 'Maviance', logo: maviance },
+                  { name: 'Turbobank', logo: turbobank }
 
                 ].map((partner, i) => (
                   <div
